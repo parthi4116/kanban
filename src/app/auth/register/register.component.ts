@@ -9,14 +9,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  title = 'angular-lc';
-  loginform: FormGroup;
-  isLoading: boolean;
-  submitted: boolean;
-  hasError: boolean;
+   loginform: FormGroup;
+   submitted: boolean;
   hide = true;
-
-
   constructor(private fb: FormBuilder,
     private toastr: ToastrService,
     private router: Router
@@ -41,21 +36,19 @@ export class RegisterComponent implements OnInit {
   }
 
   submit() {
-    this.isLoading = true;
     this.submitted = true;
     const controls = this.loginform.controls;
     if (this.loginform.invalid) {
       Object.keys(controls).forEach(controlName => {
         controls[controlName].markAsTouched()
       });
-      this.isLoading = false;
-
+      console.log(controls);
       return false;
     } else {
+      alert(1)
       localStorage.setItem('password', controls['password'].value);
       localStorage.setItem('email', controls['email'].value);
       this.router.navigate(['/pages']);
-
       this.toastr.success("Account Created Successfully");
       return true;
     }
