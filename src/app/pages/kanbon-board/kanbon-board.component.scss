@@ -63,3 +63,6 @@
   font-size: 20px;
   font-weight: 600;
 }
+::ng-deep .cdk-overlay-container {
+  z-index: 9999;
+}
