@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MatSort, Sort } from '@angular/material/sort';
+
 export interface itemNames {
   description: any,
   done: boolean;
@@ -17,26 +19,27 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class KanbonBoardComponent implements OnInit {
   stockForm: FormGroup;
-  todoList: any[] = [];
-  inprogress: any[] = [];
-  doneList: any[] = [];
-  testList: any[] = [];
-  deployList: any[] = [];
-  updateIndex!: any;
+  todoList: any = [];
+  inprogress: any= [];
+  doneList: any = [];
+  testList: any = [];
+  deployList: any = [];
+  updateIndex: any;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+
   isEditEnabled: boolean = false;
   checktype: any;
   constructor(private fb: FormBuilder, private modelservice: NgbModal) { }
   @ViewChild('add', { static: false }) add: ElementRef;
 
   ngOnInit(): void {
-    this.stockForm = this.fb.group({
+     this.stockForm = this.fb.group({
       title: [' ', Validators.required],
       desc: [' ', Validators.required],
       date: [' ', Validators.required]
     })
   };
-  //  this.modalService.open(this.popupChooseCard, { centered: true, size: 'md' });
-  opendia() {
+   opendia() {
     this.modelservice.open(this.add, { centered: true, size: 'md' });
   }
   addList() {

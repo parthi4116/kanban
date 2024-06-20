@@ -5,13 +5,13 @@
       <button class="btn btn-primary " (click)="opendia()"> Add Tak</button>
 
     </div>
-    <div class="col-md-12">
+    <div class="">
       <div cdkDropListGroup>
-        <div class="row">
-          <div class="col-md-2">
+        <div class="d-flex justify-content-around">
+          <div class="w-100  mx-3">
             <!-- Todo List -->
             <div class="example-container">
-              <h2 class="head-title mt-3">To Do</h2>
+              <h2 class="head-title mt-3 ">To Do</h2>
 
               <div cdkDropList [cdkDropListData]="todoList" class="example-list" (cdkDropListDropped)="drop($event)">
                 <div class="example-box" *ngFor="let item of todoList, let i = index" cdkDrag>
@@ -31,7 +31,7 @@
             </div>
           </div>
           <!-- inprogress list -->
-          <div class="col-md-2">
+          <div class=" w-100 mx-3">
             <div class="example-container">
               <h2 class="head-title mt-3">In Progress</h2>
               <div cdkDropList [cdkDropListData]="inprogress" class="example-list" (cdkDropListDropped)="drop($event)">
@@ -51,7 +51,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="w-100 mx-3 ">
             <!-- done list -->
             <div class="example-container">
               <h2 class="head-title mt-3">Done</h2>
@@ -76,7 +76,7 @@
 
 
           <!-- Test List -->
-          <div class="col-md-2">
+          <div class="w-100 mx-3 ">
             <div class="example-container">
               <h2 class="head-title mt-3">Test</h2>
               <div cdkDropList [cdkDropListData]="testList" class="example-list" (cdkDropListDropped)="drop($event)">
@@ -98,7 +98,7 @@
           </div>
 
           <!-- Deploy List -->
-          <div class="col-md-2">
+          <div class=" w-100 mx-3">
             <div class="example-container">
               <h2 class="head-title mt-3">Deployed</h2>
               <div cdkDropList [cdkDropListData]="deployList" class="example-list" (cdkDropListDropped)="drop($event)">
@@ -136,24 +136,24 @@
 
       <form [formGroup]="stockForm">
         <div>
-          <mat-form-field appearance="outline" class="w-100">
+          <mat-form-field appearance="outline" class="w-100 pb-3">
             <mat-label>Task Title</mat-label>
-            <input matInput formControlName="title" placeholder="Start Typing">
-            <mat-hint> Add Task Name</mat-hint>
+            <input matInput formControlName="title" placeholder="Title">
+            <!-- <mat-hint> Add Task Name</mat-hint> -->
           </mat-form-field>
         </div>
         <div>
-          <mat-form-field appearance="outline" class="w-100">
+          <mat-form-field appearance="outline" class="w-100 pb-3 ">
             <mat-label>Due date</mat-label>
-            <input matInput formControlName="desc" placeholder="Start Typing">
-            <mat-hint> Add Due date</mat-hint>
+            <input matInput formControlName="date" type="date" placeholder="Date">
+            <!-- <mat-hint> Add Title</mat-hint> -->
           </mat-form-field>
         </div>
         <div>
-          <mat-form-field appearance="outline" class="w-100">
-            <mat-label>Task Title</mat-label>
-            <input matInput formControlName="date" type="date" placeholder="Start Typing">
-            <mat-hint> Add Task Name</mat-hint>
+          <mat-form-field appearance="outline" class="w-100 pb-3">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="desc"   placeholder="description">
+            <!-- <mat-hint> Add description</mat-hint> -->
           </mat-form-field>
         </div>
 
