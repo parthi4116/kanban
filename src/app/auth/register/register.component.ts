@@ -9,8 +9,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-   loginform: FormGroup;
-   submitted: boolean;
+  loginform: FormGroup;
+  submitted: boolean;
   hide = true;
   constructor(private fb: FormBuilder,
     private toastr: ToastrService,
@@ -42,10 +42,8 @@ export class RegisterComponent implements OnInit {
       Object.keys(controls).forEach(controlName => {
         controls[controlName].markAsTouched()
       });
-      console.log(controls);
       return false;
     } else {
-      alert(1)
       localStorage.setItem('password', controls['password'].value);
       localStorage.setItem('email', controls['email'].value);
       this.router.navigate(['/pages']);
