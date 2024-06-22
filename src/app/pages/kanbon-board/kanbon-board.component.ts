@@ -133,18 +133,24 @@ export class KanbonBoardComponent implements OnInit {
         this.doneList = this.kanbanservice.getdata('doneList') != undefined ? this.kanbanservice.getdata('doneList').filter((task: any) => task.priority.includes(this.prioritysearchdata)) : []
         this.testList = this.kanbanservice.getdata('testList') != undefined ? this.kanbanservice.getdata('testList').filter((task: any) => task.priority.includes(this.prioritysearchdata)) : []
         this.deployList = this.kanbanservice.getdata('deployList') != undefined ? this.kanbanservice.getdata('deployList').filter((task: any) => task.priority.includes(this.prioritysearchdata)) : []
+
+      } else {
+        this.todoList = this.kanbanservice.getdata('todoList');
+        this.inprogress = this.kanbanservice.getdata('inprogress') != undefined ? this.kanbanservice.getdata('inprogress') : [];
+        this.doneList = this.kanbanservice.getdata('doneList') != undefined ? this.kanbanservice.getdata('doneList') : [];
+        this.testList = this.kanbanservice.getdata('testList') != undefined ? this.kanbanservice.getdata('testList') : [];
+        this.deployList = this.kanbanservice.getdata('deployList') != undefined ? this.kanbanservice.getdata('deployList') : [];
+
       }
 
     } else {
-      if (this.searchdata != '')
-        this.todoList = this.kanbanservice.getdata('todoList').filter((task: any) => task.title.includes(this.searchdata));
+      this.todoList = this.kanbanservice.getdata('todoList').filter((task: any) => task.title.includes(this.searchdata));
       this.inprogress = this.kanbanservice.getdata('inprogress') != undefined ? this.kanbanservice.getdata('inprogress').filter((task: any) => task.title.includes(this.searchdata)) : []
       this.doneList = this.kanbanservice.getdata('doneList') != undefined ? this.kanbanservice.getdata('doneList').filter((task: any) => task.title.includes(this.searchdata)) : []
       this.testList = this.kanbanservice.getdata('testList') != undefined ? this.kanbanservice.getdata('testList').filter((task: any) => task.title.includes(this.searchdata)) : []
       this.deployList = this.kanbanservice.getdata('deployList') != undefined ? this.kanbanservice.getdata('deployList').filter((task: any) => task.title.includes(this.searchdata)) : []
     };
-  };
-
+  }
   // Using for Short
   sortData(sort: Sort) {
     let sort1 = sort;
