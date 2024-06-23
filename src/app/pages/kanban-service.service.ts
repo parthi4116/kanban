@@ -14,7 +14,6 @@ export class KanbanServiceService {
 
   setdata(data: any, type: any) {
     (type == 'todoList') ? this.todoList = data : (type == 'inprogress') ? this.inprogress = data : (type == 'doneList') ? this.doneList = data : (type == 'testList') ? this.testList = data : this.deployList = data;
- console.log(data);
  
   };
   getdata(type: any) {

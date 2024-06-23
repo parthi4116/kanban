@@ -105,8 +105,9 @@ export class KanbonBoardComponent implements OnInit {
       priority: this.stockForm.value.priority
     };
     (this.checktype == 'todo') ? this.todoList[this.updateIndex] = updatedItem : (this.checktype == 'inprogress') ? this.inprogress[this.updateIndex] = updatedItem : (this.checktype == 'done') ? this.doneList[this.updateIndex] = updatedItem : (this.checktype == 'test') ? this.testList[this.updateIndex] = updatedItem : this.deployList[this.updateIndex] = updatedItem;
-    this.stockForm.reset()
-    this.modelservice.dismissAll()
+    this.stockForm.reset();
+    this.modelservice.dismissAll();
+    this.isEditEnabled = false;
   };
 
   // using for the drop 
