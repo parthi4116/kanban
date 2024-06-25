@@ -20,7 +20,6 @@
     "@angular/platform-browser-dynamic": "^16.2.12",
     "@angular/router": "^16.2.12",
     "@ng-bootstrap/ng-bootstrap": "^13.1.0",
-    "@types/body-parser": "^1.19.5",
     "ngx-toaster": "^1.0.1",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.5.0",
