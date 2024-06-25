@@ -2,10 +2,10 @@
   <div class="login-content ">
     <mat-toolbar class="login-toolbar justify-content-center" color="primary">Sign Up</mat-toolbar>
     <mat-card>
-      <form [formGroup]="loginform" novalidate="novalidate" (ngSubmit)="submit()">
+      <form [formGroup]="loginform" class="p-4" novalidate="novalidate" (ngSubmit)="submit()">
         <!-- email -->
         <!-- start -->
-        <mat-form-field class="w-100">
+        <mat-form-field class="w-100" appearance="outline" >
           <input type="email" matInput formControlName="email" placeholder="Email">
         </mat-form-field>
         <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
@@ -32,7 +32,7 @@
 
         <!-- firstname -->
         <!-- Start -->
-        <mat-form-field class="w-100">
+        <mat-form-field class="w-100" appearance="outline">
           <input type="email" matInput formControlName="fname" placeholder="First Name">
         </mat-form-field>
         <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
@@ -44,7 +44,7 @@
 
         <!-- Last Name -->
         <!-- Start -->
-        <mat-form-field class="w-100">
+        <mat-form-field class="w-100" appearance="outline">
           <input type="email" matInput formControlName="lname" placeholder="Last Name">
         </mat-form-field>
         <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
@@ -54,7 +54,7 @@
 
         <!--Password -->
         <!-- start -->
-        <mat-form-field class="w-100">
+        <mat-form-field class="w-100" appearance="outline">
           <input matInput placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
           <mat-icon matSuffix class="cursor" (click)="hide = !hide">{{hide ? 'visibility_off' :
             'visibility'}}</mat-icon>
