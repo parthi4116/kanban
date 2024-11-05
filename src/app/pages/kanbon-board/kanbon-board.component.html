@@ -4,7 +4,7 @@
   <div class="d-flex mx-md-3 mx-0 align-items-center mt-4  flex-md-row flex-column">
 
     <div class="me-2 mb-3 mb-md-0">
-      <button class="btn btn-primary " (click)="openpopup()"> Add Tak</button>
+      <button class="btn btn-primary " (click)="openpopup()"> Add Task</button>
     </div>
     <div class="d-flex align-items-center cus-mat me-2 flex-md-row flex-column">
       <div matSort (matSortChange)="sortData($event)" class="me-3 mb-3 mb-md-0">
@@ -14,7 +14,7 @@
         <mat-label>Priority</mat-label>
         <mat-select [(ngModel)]="prioritysearchdata" (ngModelChange)="search('priority')">
           <mat-option value="high">High</mat-option>
-          <mat-option value="medium">medium </mat-option>
+          <mat-option value="medium">Medium </mat-option>
           <mat-option value="low">Low</mat-option>
           <mat-option value="all">All</mat-option>
         </mat-select>
@@ -39,9 +39,9 @@
               <div *ngIf="todoList.length==0" class="p-2">No data found</div>
               <div class="example-box" *ngFor="let item of todoList, let i = index" cdkDrag>
                 <div>
-                  <div>{{item.title}}</div>
-                  <div>{{item.date}}</div>
-                  <div>{{item.description}}</div>
+                  <div>{{item.title| titlecase }}</div>
+                  <div>{{item.date| date }}</div>
+                  <div>{{item.description| titlecase }}</div>
                   <div>{{item.priority}}</div>
                 </div>
                 <div class="box">
@@ -63,9 +63,9 @@
               <div *ngIf="inprogress.length==0" class="p-2">No data found</div>
               <div class="example-box" *ngFor="let item of inprogress, let i= index" cdkDrag>
                 <div>
-                  <div>{{item.title}}</div>
-                  <div>{{item.date}}</div>
-                  <div>{{item.description}}</div>
+                  <div>{{item.title| titlecase }}</div>
+                  <div>{{item.date| date }}</div>
+                  <div>{{item.description| titlecase }}</div>
                   <div>{{item.priority}}</div>
                 </div>
                 <div class="box">
@@ -87,9 +87,9 @@
               <div *ngIf="doneList.length==0" class="p-2">No data found</div>
               <div class="example-box" *ngFor="let item of doneList, let i = index" cdkDrag>
                 <div>
-                  <div>{{item.title}}</div>
-                  <div>{{item.date}}</div>
-                  <div>{{item.description}}</div>
+                  <div>{{item.title| titlecase }}</div>
+                  <div>{{item.date| date }}</div>
+                  <div>{{item.description| titlecase }}</div>
                   <div>{{item.priority}}</div>
                 </div>
                 <div class="box">
@@ -112,9 +112,9 @@
               <div *ngIf="testList.length==0" class="p-2">No data found</div>
               <div class="example-box" *ngFor="let item of testList, let i = index" cdkDrag>
                 <div>
-                  <div>{{item.title}}</div>
-                  <div>{{item.date}}</div>
-                  <div>{{item.description}}</div>
+                  <div>{{item.title| titlecase }}</div>
+                  <div>{{item.date| date }}</div>
+                  <div>{{item.description| titlecase }}</div>
                   <div>{{item.priority}}</div>
                 </div>
                 <div class="box">
@@ -136,9 +136,9 @@
               <div *ngIf="deployList.length==0" class="p-2">No data found</div>
               <div class="example-box" *ngFor="let item of deployList, let i = index" cdkDrag>
                 <div>
-                  <div>{{item.title}}</div>
-                  <div>{{item.date}}</div>
-                  <div>{{item.description}}</div>
+                  <div>{{item.title| titlecase }}</div>
+                  <div>{{item.date| date }}</div>
+                  <div>{{item.description| titlecase }}</div>
                   <div>{{item.priority}}</div>
                 </div>
                 <div class="box">
